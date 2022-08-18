@@ -1,12 +1,12 @@
 package com.hrodrigues.Metodos
 
 
-import com.hrodrigues.Classes.PesssoaFisica
-import com.hrodrigues.Classes.PesssoaJuridica
+import com.hrodrigues.Classes.PessoaFisica
+import com.hrodrigues.Classes.PessoaJuridica
 
 // Cadastra Pessoa Fisica
 static PessoaFisica() {
-    PesssoaFisica candidato = new PesssoaFisica();
+    PessoaFisica candidato = new PessoaFisica();
     List<String> skill = new ArrayList<String>();
     int op = 0;
     println("Digite o nome do candidato: ");
@@ -39,7 +39,7 @@ static PessoaFisica() {
 
 // Cadastrar Pessoa Juridica
 static PessoaJuridica() {
-    PesssoaJuridica empresa = new PesssoaJuridica();
+    PessoaJuridica empresa = new PessoaJuridica();
     List<String> skill = new ArrayList<String>();
     int op = 0;
     println("Digite o nome da empresa: ");

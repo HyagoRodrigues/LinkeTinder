@@ -1,26 +1,23 @@
 package com.hrodrigues
 
-import com.hrodrigues.Classes.PesssoaFisica
-import com.hrodrigues.Classes.PesssoaJuridica
+import com.hrodrigues.Classes.Listas
+import com.hrodrigues.Classes.PessoaFisica
+import com.hrodrigues.Classes.PessoaJuridica
 import com.hrodrigues.Metodos.Cadastrar
 import com.hrodrigues.Metodos.Listar
 
-List<PesssoaFisica> listaPessoaFisica = new ArrayList<PesssoaFisica>();
-listaPessoaFisica.add(PesssoaFisica.New("João", "j@email.com","Back-end","SP","Brasil","12345","123456789",40,["Java", "C#", "Python" ]));
-listaPessoaFisica.add(PesssoaFisica.New("Maria", "m@email.com","Back-end","DF","Brasil","12345","123456789",29,["Java", "C#", "Python" ]));
-listaPessoaFisica.add(PesssoaFisica.New("Pedro", "p@email.com","Front-end","GO","Brasil","12345","123456789",25,["Javascript", "CSS", "HTML" ]));
-listaPessoaFisica.add(PesssoaFisica.New("Ana", "a@email.com","DevFullStack","SP","Brasil","12345","123456789",33,["Javascript", "CSS", "HTML", "MongoDB" ]));
-listaPessoaFisica.add(PesssoaFisica.New("José", "j@email.com","DevFullStack","SP","Brasil","12345","123456789",30,["AdobeXD", "PSC6", "Illustrator" ]));
 
-List<PesssoaJuridica> listaPessoaJuridica = new ArrayList<PesssoaJuridica>();
-listaPessoaJuridica.add(PesssoaJuridica.New("Google","g@email.com","Empresa de busca","SP","Brasil","12345","123456789",["Java", "C#", "Python"]));
-listaPessoaJuridica.add(PesssoaJuridica.New("Facebook","ff@email.com", "Rede social","SP","Brasil","12345","123456789",["Javascript", "CSS", "HTML"]));
-listaPessoaJuridica.add(PesssoaJuridica.New("Microsoft","m@email.com", "Empresa de desenvolvimento","SP","Brasil","12345","123456789",["Javascript", "CSS", "HTML", "MongoDB"]));
-listaPessoaJuridica.add(PesssoaJuridica.New("Amazon","aa@email.com", "Empresa de compras","SP","Brasil","12345","123456789",["AdobeXD", "PSC6", "Illustrator"]));
-listaPessoaJuridica.add(PesssoaJuridica.New("Apple","aaa@email.com", "Empresa de tecnologia","SP","Brasil","12345","123456789",["AdobeXD", "PSC6", "Illustrator"]));
+List<PessoaFisica> listaPessoaFisica = [];
+List<PessoaJuridica> listaPessoaJuridica = [];
 
-//List<PesssoaFisica> listaPessoaFisica = [];
-//List<PesssoaJuridica> listaPessoaJuridica = [];
+
+for(pf in Listas.listaPessoaFisica()){;
+    listaPessoaFisica << pf;
+}
+
+for (pj in Listas.listaPessoaJuridica()){
+    listaPessoaJuridica << pj;
+}
 
 
 
