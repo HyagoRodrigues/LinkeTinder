@@ -19,8 +19,6 @@ for (pj in Listas.listaPessoaJuridica()){
     listaPessoaJuridica << pj;
 }
 
-
-
 boolean exit = false
 
 while(!exit){
