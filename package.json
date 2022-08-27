@@ -1,0 +1,26 @@
+{
+  "name": "linketinder",
+  "version": "1.0.0",
+  "description": "-- arquivo principal se encontra no caminho /src/com/hrodrigues/ --  # MainApplication.groovy",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HyagoRodrigues/LinkeTinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HyagoRodrigues/LinkeTinder/issues"
+  },
+  "homepage": "https://github.com/HyagoRodrigues/LinkeTinder#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
