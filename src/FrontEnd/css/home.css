@@ -20,5 +20,13 @@
     width: 50%;
 }
 
+.btn-pagina{
+    background-color: #6BA54A;
+    color: white;
+}
 
+.btn-pagina:hover{
+    background-color: #3f5d29;
+    color: white;
+}
 

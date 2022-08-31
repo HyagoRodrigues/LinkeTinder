@@ -25,9 +25,9 @@ let checkAngular = document.querySelector('#CheckAngular');
 let checkPost = document.querySelector('#CheckPost');
 const canditado1 = new PessoaFisica("Eduardo", "e@email.com", "816.171.166-61", 22, "Brasil", "GO", "72590-000", "Desenvolvedor Junior", ["Java", "Groovy", "Angular"]);
 const canditado2 = new PessoaFisica("Maria Alice", "maria.alice@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "Angular", "PostGress"]);
-const canditado3 = new PessoaFisica("Maria Alice", "maria.alice@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "Angular", "PostGress"]);
-const canditado4 = new PessoaFisica("Maria Alice", "maria.alice@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "Angular", "PostGress"]);
-const canditado5 = new PessoaFisica("Maria Alice", "maria.alice@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "Angular", "PostGress"]);
+const canditado3 = new PessoaFisica("Gabriel Fernandes", "maria.alice@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedor Junior", ["Javascript", "Typescript"]);
+const canditado4 = new PessoaFisica("Josefina", "j@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Sênior", ["Java", "Groovy", "Angular", "PostGress", "Grails",]);
+const canditado5 = new PessoaFisica("Gustavo", "g@email.com", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "Angular", "PostGress", "Javascript"]);
 candidatos.push(canditado1, canditado2, canditado3, canditado4, canditado5);
 export function CadastraCandidato(e) {
     e.preventDefault();

@@ -1,4 +1,4 @@
-import {CadastraCandidato , candidatos } from "./CadastroCandidato.js";
+import {CadastraCandidato , candidatos } from "./Candidato";
 
 
 

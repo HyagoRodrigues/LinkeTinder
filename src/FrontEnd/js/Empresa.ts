@@ -1,5 +1,6 @@
 import {PessoaJuridica} from "./Classes/PessoaJuridica.js";
-import {CadastraCandidato, candidatos} from "./CadastroCandidato.js";
+import {CadastraCandidato, candidatos} from "./Candidato.js";
+
 
 export const empresas: Array<PessoaJuridica> = new Array<PessoaJuridica>();
 
@@ -106,4 +107,26 @@ function CadastrarEmpresa(e){
 }
 
 
+function listarCandidatos(){
+    console.log(candidatos)
+    candidatos.map(cand => {
+        const nRow = document.createElement('tr');
+        nRow.innerHTML =`
+            <td>${cand.descricao}</td>
+            <td>${cand.skills}</td>
+            <td>
+                <button class="btn btn-outline-success"> Curtir </button>
+            </td>
+        `;
+        document.querySelector('#tbody').appendChild(nRow);
+    })
+
+}
+
+
+
+
+
+//Eventos
+window.addEventListener("load", listarCandidatos)
 <HTMLSelectElement>document.getElementById('modal-form')?.addEventListener('submit', CadastrarEmpresa)

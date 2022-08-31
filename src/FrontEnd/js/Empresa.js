@@ -1,5 +1,6 @@
 var _a;
 import { PessoaJuridica } from "./Classes/PessoaJuridica.js";
+import { candidatos } from "./Candidato.js";
 export const empresas = new Array();
 let nome = document.querySelector('#NomeInput');
 let email = document.querySelector('#EmailInput');
@@ -47,4 +48,20 @@ function CadastrarEmpresa(e) {
     document.getElementById('modal-form').reset();
     console.log(empresas);
 }
-(_a = document.getElementById('modal-form')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', CadastrarEmpresa);
+function listarCandidatos() {
+    console.log(candidatos);
+    candidatos.map(cand => {
+        const nRow = document.createElement('tr');
+        nRow.innerHTML = `
+            <td>${cand.descricao}</td>
+            <td>${cand.skills}</td>
+            <td>
+                <button class="btn btn-outline-success"> Curtir </button>
+            </td>
+        `;
+        document.querySelector('#tbody').appendChild(nRow);
+    });
+}
+//Eventos
+window.addEventListener("load", listarCandidatos)
+    < HTMLSelectElement > ((_a = document.getElementById('modal-form')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', CadastrarEmpresa));
