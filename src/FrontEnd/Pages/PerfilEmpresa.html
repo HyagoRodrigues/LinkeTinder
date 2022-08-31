@@ -44,7 +44,7 @@
           <h5 class="modal-title" id="exampleModalLabel">Cadastro de Empresa</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <form class="modal-body" id="modal-form">
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="NomeInput" placeholder="Nome">
             <label for="NomeInput">Nome</label>
@@ -89,7 +89,7 @@
           <div class="row g-3 md-3">
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Python" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="Python" id="CheckPythonEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   Python
                 </label>
@@ -97,7 +97,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Java" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="Java" id="CheckJavaEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   Java
                 </label>
@@ -105,7 +105,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="JavaScript" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="JavaScript" id="CheckJSEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   JavaScript
                 </label>
@@ -113,7 +113,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Typescript" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="Typescript" id="CheckTSEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   Typescript
                 </label>
@@ -121,7 +121,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Groovy" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="Groovy" id="CheckGroovyEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   Groovy
                 </label>
@@ -129,7 +129,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Grails" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="Grails" id="CheckGrailsEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   Grails
                 </label>
@@ -137,7 +137,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="Angular" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="Angular" id="CheckAngularEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   Angular
                 </label>
@@ -145,7 +145,7 @@
             </div>
             <div class="col-md">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="PostgreSQL" id="CheckInput">
+                <input class="form-check-input" type="checkbox" value="PostgreSQL" id="CheckPostEmpresas">
                 <label class="form-check-label" for="CheckInput">
                   PostgreSQL
                 </label>
@@ -156,9 +156,9 @@
 
           <div class="modal-footer mt-2">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-cadastro">Cadastrar</button>
+            <button type="submit" class="btn btn-cadastro" data-bs-dismiss="modal">Cadastrar</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

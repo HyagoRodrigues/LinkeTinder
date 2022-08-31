@@ -1,6 +1,6 @@
 import {PessoaFisica} from "./Classes/PessoaFisica.js";
 
-export const candidatos: Array<PessoaFisica> = new Array<PessoaFisica>()
+export const candidatos: Array<PessoaFisica> = new Array<PessoaFisica>();
 
 let nome = <HTMLSelectElement>document.querySelector('#NomeInputC');
 let email = <HTMLSelectElement>document.querySelector('#EmailInputC');
@@ -17,14 +17,14 @@ let desc = <HTMLSelectElement>document.querySelector('#DescInputC');
 //             if(checkbox.checked){
 //                 skills.push(checkbox.value)
 
-let checkPython = document.querySelector('#CheckPython')
-let checkJava = document.querySelector('#CheckJava')
-let checkJS = document.querySelector('#CheckJS')
-let checkTS = document.querySelector('#CheckTS')
-let checkGroovy = document.querySelector('#CheckGroovy')
-let checkGrails = document.querySelector('#CheckGrails')
-let checkAngular = document.querySelector('#CheckAngular')
-let checkPost = document.querySelector('#CheckPost')
+let checkPython = document.querySelector('#CheckPython');
+let checkJava = document.querySelector('#CheckJava');
+let checkJS = document.querySelector('#CheckJS');
+let checkTS = document.querySelector('#CheckTS');
+let checkGroovy = document.querySelector('#CheckGroovy');
+let checkGrails = document.querySelector('#CheckGrails');
+let checkAngular = document.querySelector('#CheckAngular');
+let checkPost = document.querySelector('#CheckPost');
 
 
 const canditado1 = new PessoaFisica(
@@ -36,7 +36,7 @@ const canditado1 = new PessoaFisica(
     "72590-000",
     "Desenvolvedor Junior",
     ["Java", "Groovy", "Angular"]
-    )
+    );
 const canditado2 = new PessoaFisica(
     "Maria Alice",
     "maria.alice@email.com",
@@ -46,8 +46,7 @@ const canditado2 = new PessoaFisica(
     "72590-000",
     "Desenvolvedora Pleno",
     ["Java", "Groovy", "Angular", "PostGress"]
-)
-
+);
 const canditado3 = new PessoaFisica(
     "Maria Alice",
     "maria.alice@email.com",
@@ -57,8 +56,7 @@ const canditado3 = new PessoaFisica(
     "72590-000",
     "Desenvolvedora Pleno",
     ["Java", "Groovy", "Angular", "PostGress"]
-)
-
+);
 const canditado4 = new PessoaFisica(
     "Maria Alice",
     "maria.alice@email.com",
@@ -68,8 +66,7 @@ const canditado4 = new PessoaFisica(
     "72590-000",
     "Desenvolvedora Pleno",
     ["Java", "Groovy", "Angular", "PostGress"]
-)
-
+);
 const canditado5 = new PessoaFisica(
     "Maria Alice",
     "maria.alice@email.com",
@@ -79,7 +76,7 @@ const canditado5 = new PessoaFisica(
     "72590-000",
     "Desenvolvedora Pleno",
     ["Java", "Groovy", "Angular", "PostGress"]
-)
+);
 
 candidatos.push(canditado1, canditado2,canditado3,canditado4,canditado5);
 
