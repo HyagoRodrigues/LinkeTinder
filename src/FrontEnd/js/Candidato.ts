@@ -1,4 +1,5 @@
 import {PessoaFisica} from "./Classes/PessoaFisica.js";
+import {empresas} from "./Empresa.js";
 
 export const candidatos: Array<PessoaFisica> = new Array<PessoaFisica>();
 
@@ -35,7 +36,7 @@ const canditado1 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedor Junior",
-    ["Java", "Groovy", "Angular"]
+    ["Java", "Groovy", "Angular", "TypeScript"]
     );
 const canditado2 = new PessoaFisica(
     "Maria Alice",
@@ -45,7 +46,7 @@ const canditado2 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedora Pleno",
-    ["Java", "Groovy", "Angular", "PostGress"]
+    ["Java", "Groovy",  "PostgreSQL","Python"]
 );
 const canditado3 = new PessoaFisica(
     "Gabriel Fernandes",
@@ -55,7 +56,7 @@ const canditado3 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedor Junior",
-    ["Javascript", "Typescript"]
+    ["JavaScript", "Typescript","Angular"]
 );
 const canditado4 = new PessoaFisica(
     "Josefina",
@@ -65,7 +66,7 @@ const canditado4 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedora Sênior",
-    ["Java", "Groovy", "Angular", "PostGress", "Grails", ]
+    ["Java", "Groovy", "Angular", "PostgreSQL", "Grails", ]
 );
 const canditado5 = new PessoaFisica(
     "Gustavo",
@@ -75,7 +76,7 @@ const canditado5 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedora Pleno",
-    ["Java", "Groovy", "Angular", "PostGress", "Javascript"]
+    ["Java", "Groovy", "Angular", "PostgreSQL", "JavaScript"]
 );
 
 candidatos.push(canditado1, canditado2,canditado3,canditado4,canditado5);
@@ -85,12 +86,12 @@ export function CadastraCandidato(e) {
     let skills = [];
     if (checkPython.checked) skills.push("Python");
     if (checkJava.checked) skills.push("Java");
-    if (checkJS.checked) skills.push("Javascript");
-    if (checkTS.checked) skills.push("Typescript");
+    if (checkJS.checked) skills.push("JavaScript");
+    if (checkTS.checked) skills.push("TypeScript");
     if (checkGroovy.checked) skills.push("Groovy");
     if (checkGrails.checked) skills.push("Grails");
     if (checkAngular.checked) skills.push("Angular");
-    if (checkPost.checked) skills.push("PostGress");
+    if (checkPost.checked) skills.push("PostgreSQL");
 
     const candidato = new PessoaFisica(
         nome.value,
@@ -108,7 +109,21 @@ export function CadastraCandidato(e) {
     console.log(candidatos);
 }
 
+function listarEmpresas(){
+    empresas.map(emp => {
+        const nRow = document.createElement('tr');
+        nRow.innerHTML =`
+            <td>${emp.descricao}</td>
+            <td>${emp.skills}</td>
+            <td>
+                <button class="btn btn-outline-success"> Curtir </button>
+            </td>
+        `;
+        document.querySelector('#tbody').appendChild(nRow);
+    })
+}
 
 
 
+<HTMLSelectElement>document.getElementById('listar-empresas')?.addEventListener("click", listarEmpresas)
 <HTMLSelectElement>document.getElementById('modal-form')?.addEventListener('submit', CadastraCandidato)

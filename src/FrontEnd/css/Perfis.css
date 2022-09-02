@@ -23,3 +23,7 @@
     background-color: #3f5d29;
     color: white;
 }
+
+#myChart{
+    max-height: 400px;
+}
