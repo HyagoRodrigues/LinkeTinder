@@ -95,7 +95,6 @@ function montarArray() {
     }
     qntdSkills.sort(function (a, b) {
         var keyA = a.skill, keyB = b.skill;
-        // Compare the 2 dates
         if (keyA < keyB)
             return -1;
         if (keyA > keyB)
