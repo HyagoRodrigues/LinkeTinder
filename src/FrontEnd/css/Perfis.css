@@ -27,3 +27,7 @@
 #myChart{
     max-height: 400px;
 }
+
+.input-mensagem-erro {
+    display: none;
+}

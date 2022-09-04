@@ -11,7 +11,7 @@
 
 <main class="container">
   <div class="d-flex align-items-center p-3 my-3 text-white bg-success rounded shadow-sm">
-    <img class="me-3" src="../assets/office-building.png" alt="" width="48" height="38">
+    <img class="me-3" src="../assets/office-building.png" alt="" width="48" height="48">
     <div class="lh-1">
       <h1 class="h6 mb-0 text-white lh-1">Perfil</h1>
       <small>Empresa</small>
@@ -53,40 +53,40 @@
         </div>
         <form class="modal-body" id="modal-form">
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="NomeInput" placeholder="Nome">
+            <input type="text" class="form-control" id="NomeInput" placeholder="Nome" required>
             <label for="NomeInput">Nome</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="EmailInput" placeholder="E-mail">
+            <input type="email" class="form-control" id="EmailInput" placeholder="E-mail" required>
             <label for="EmailInput">E-mail</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="CnpjInput" placeholder="CNPJ">
+            <input type="text" class="form-control" id="CnpjInput" placeholder="CNPJ" required>
             <label for="CnpjInput">CNPJ</label>
           </div>
           <div class="row g-3">
             <div class="col-md mb-3">
               <div class="form-floating">
-                <input type="text" class="form-control" id="EstadoInput" placeholder="Estado" >
+                <input type="text" class="form-control" id="EstadoInput" placeholder="Estado" required>
                 <label for="EstadoInput">Estado</label>
               </div>
             </div>
             <div class="col-md">
               <div class="form-floating">
-                <input type="text" class="form-control" id="CepInput" placeholder="Cep" >
+                <input type="text" class="form-control" id="CepInput" placeholder="Cep" required>
                 <label for="CepInput">CEP</label>
               </div>
             </div>
             <div class="col-md">
               <div class="form-floating">
-                <input type="text" class="form-control" id="Paisinput" placeholder="Pais" >
+                <input type="text" class="form-control" id="Paisinput" placeholder="Pais" required>
                 <label for="Paisinput">Pais</label>
               </div>
             </div>
           </div>
 
           <div class="form-floating mb-3">
-            <textarea type="text" class="form-control" id="DescInput" placeholder="Descrição"></textarea>
+            <textarea type="text" class="form-control" id="DescInput" placeholder="Descrição" required></textarea>
             <label for="DescInput">Descrição</label>
           </div>
 
@@ -163,7 +163,7 @@
 
           <div class="modal-footer mt-2">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            <button type="submit" class="btn btn-cadastro" data-bs-dismiss="modal">Cadastrar</button>
+            <button type="submit" class="btn btn-cadastro">Cadastrar</button>
           </div>
         </form>
       </div>

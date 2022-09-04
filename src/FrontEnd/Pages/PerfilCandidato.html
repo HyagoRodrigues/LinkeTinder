@@ -11,7 +11,7 @@
 <main class="container">
 
     <div class="d-flex align-items-center p-3 my-3 text-white bg-success rounded shadow-sm">
-        <img class="me-3" src="../assets/profile.png" alt="" width="48" height="38">
+        <img class="me-3" src="../assets/profile.png" alt="" width="48" height="48">
         <div class="lh-1">
             <h1 class="h6 mb-0 text-white lh-1">Perfil</h1>
             <small>Candidato</small>
@@ -46,23 +46,44 @@
                 </div>
                 <form class="modal-body" id="modal-form">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="NomeInputC" placeholder="Nome">
-                        <label for="NomeInput">Nome</label>
+                        <input type="text" class="form-control" id="NomeInputC" placeholder="Nome" data-tipo="nome" required >
+                        <label for="NomeInputC">Nome</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="EmailInputC" placeholder="E-mail">
-                        <label for="EmailInput">E-mail</label>
+                        <input type="email" class="form-control" id="EmailInputC" placeholder="E-mail" required>
+                        <label for="EmailInputC">E-mail</label>
                     </div>
                     <div class="row g-2">
                         <div class="col-md ">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="IdadeInputC" placeholder="Idade">
+                                <input type="text" class="form-control" id="LinkInputC" placeholder="Link do LinkedIn" required>
+                                <label for="LinkInputC">LinkedIn</label>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="TelInputC" placeholder="(XX) XXXX-XXXX " required>
+                                <label for="TelInputC">Telefone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md ">
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="IdadeInputC" placeholder="Idade" required>
                                 <label for="IdadeInputC">Idade</label>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="CpfInputC" placeholder="CPF">
+                                <input type="text"
+                                       class="form-control"
+                                       id="CpfInputC"
+                                       maxlength="14"
+                                       placeholder="CPF"
+                                       required
+                                >
                                 <label for="CpfInputC">CPF</label>
                             </div>
                         </div>
@@ -70,27 +91,27 @@
                     <div class="row g-3">
                         <div class="col-md mb-3">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="EstadoInputC" placeholder="Estado">
-                                <label for="EstadoInput">Estado</label>
+                                <input type="text" class="form-control" id="EstadoInputC" placeholder="Estado" required>
+                                <label for="EstadoInputC">Estado</label>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="CepInputC" placeholder="Cep">
-                                <label for="CepInput">CEP</label>
+                                <input type="text" class="form-control" id="CepInputC" placeholder="Cep" required>
+                                <label for="CepInputC">CEP</label>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="PaisinputC" placeholder="Pais">
-                                <label for="Paisinput">Pais</label>
+                                <input type="text" class="form-control" id="PaisinputC" placeholder="Pais" required>
+                                <label for="PaisinputC">Pais</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <textarea type="text" class="form-control" id="DescInputC" placeholder="Descrição"></textarea>
-                        <label for="DescInput">Descrição</label>
+                        <textarea type="text" class="form-control" id="DescInputC" placeholder="Descrição" required></textarea>
+                        <label for="DescInputC">Descrição</label>
                     </div>
 
                     <label class="form-check-label mb-3">
@@ -100,7 +121,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Python" id="CheckPython">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckPython">
                                     Python
                                 </label>
                             </div>
@@ -108,7 +129,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Java" id="CheckJava">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckJava">
                                     Java
                                 </label>
                             </div>
@@ -116,7 +137,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="JavaScript" id="CheckJS">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckJS">
                                     JavaScript
                                 </label>
                             </div>
@@ -124,7 +145,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Typescript" id="CheckTS">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckTS">
                                     Typescript
                                 </label>
                             </div>
@@ -132,7 +153,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Groovy" id="CheckGroovy">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckGroovy">
                                     Groovy
                                 </label>
                             </div>
@@ -140,7 +161,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Grails" id="CheckGrails">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckGrails">
                                     Grails
                                 </label>
                             </div>
@@ -148,7 +169,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Angular" id="CheckAngular">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckAngular">
                                     Angular
                                 </label>
                             </div>
@@ -156,7 +177,7 @@
                         <div class="col-md">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="PostgreSQL" id="CheckPost">
-                                <label class="form-check-label" for="CheckInput">
+                                <label class="form-check-label" for="CheckPost">
                                     PostgreSQL
                                 </label>
                             </div>
@@ -166,7 +187,7 @@
 
                     <div class="modal-footer mt-2">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="submit" id="cadastrar" class="btn btn-cadastro" data-bs-dismiss="modal">
+                        <button type="submit" id="cadastrar" class="btn btn-cadastro">
                             Cadastrar
                         </button>
                     </div>

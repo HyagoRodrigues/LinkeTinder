@@ -1,6 +1,6 @@
 var _a, _b, _c;
 import { PessoaJuridica } from "./Classes/PessoaJuridica.js";
-import { candidatos } from "./Candidato.js";
+import { candidatos, closeModal } from "./Candidato.js";
 export const empresas = new Array();
 let nome = document.querySelector('#NomeInput');
 let email = document.querySelector('#EmailInput');
@@ -9,15 +9,6 @@ let estado = document.querySelector('#EstadoInput');
 let cep = document.querySelector('#CepInput');
 let pais = document.querySelector('#Paisinput');
 let desc = document.querySelector('#DescInput');
-//Checkboxes
-let checkPython = document.querySelector('#CheckPythonEmpresas');
-let checkJava = document.querySelector('#CheckJavaEmpresas');
-let checkJS = document.querySelector('#CheckJSEmpresas');
-let checkTS = document.querySelector('#CheckTSEmpresas');
-let checkGroovy = document.querySelector('#CheckGroovyEmpresas');
-let checkGrails = document.querySelector('#CheckGrailsEmpresas');
-let checkAngular = document.querySelector('#CheckAngularEmpresas');
-let checkPost = document.querySelector('#CheckPostEmpresas');
 const empresa1 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
 const empresa2 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
 const empresa3 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
@@ -27,25 +18,16 @@ empresas.push(empresa1, empresa2, empresa3, empresa4, empresa5);
 function CadastrarEmpresa(e) {
     e.preventDefault();
     let skills = [];
-    if (checkPython.checked)
-        skills.push("Python");
-    if (checkJava.checked)
-        skills.push("Java");
-    if (checkJS.checked)
-        skills.push("JavaScript");
-    if (checkTS.checked)
-        skills.push("TypeScript");
-    if (checkGroovy.checked)
-        skills.push("Groovy");
-    if (checkGrails.checked)
-        skills.push("Grails");
-    if (checkAngular.checked)
-        skills.push("Angular");
-    if (checkPost.checked)
-        skills.push("PostgreSQL");
+    let checkboxes = document.querySelectorAll('.form-check-input');
+    for (let checkbox of checkboxes) {
+        if (checkbox.checked) {
+            skills.push(checkbox.value);
+        }
+    }
     const empresa = new PessoaJuridica(nome.value, email.value, cnpj.value, estado.value, pais.value, cep.value, desc.value, skills);
     empresas.push(empresa);
     document.getElementById('modal-form').reset();
+    closeModal();
     console.log(empresas);
 }
 function listarCandidatos() {
@@ -61,6 +43,7 @@ function listarCandidatos() {
         document.querySelector('#tbody').appendChild(nRow);
     });
 }
+//Gráfico
 function montarArray() {
     let qntdSkills = [];
     const skills = [
@@ -103,7 +86,6 @@ function montarArray() {
     });
     return qntdSkills;
 }
-//Gráfico
 function gerarGrafico() {
     let ctx = document.querySelector('#myChart');
     let qntdSkills = montarArray();

@@ -1,6 +1,5 @@
 import {PessoaJuridica} from "./Classes/PessoaJuridica.js";
-import {candidatos} from "./Candidato.js";
-
+import {candidatos, closeModal} from "./Candidato.js";
 
 export const empresas: Array<PessoaJuridica> = new Array<PessoaJuridica>();
 
@@ -11,17 +10,6 @@ let estado = <HTMLSelectElement>document.querySelector('#EstadoInput');
 let cep = <HTMLSelectElement>document.querySelector('#CepInput');
 let pais = <HTMLSelectElement>document.querySelector('#Paisinput');
 let desc = <HTMLSelectElement>document.querySelector('#DescInput');
-
-//Checkboxes
-let checkPython = document.querySelector('#CheckPythonEmpresas');
-let checkJava = document.querySelector('#CheckJavaEmpresas');
-let checkJS = document.querySelector('#CheckJSEmpresas');
-let checkTS = document.querySelector('#CheckTSEmpresas');
-let checkGroovy = document.querySelector('#CheckGroovyEmpresas');
-let checkGrails = document.querySelector('#CheckGrailsEmpresas');
-let checkAngular = document.querySelector('#CheckAngularEmpresas');
-let checkPost = document.querySelector('#CheckPostEmpresas');
-
 
 const empresa1 = new PessoaJuridica(
     "Google",
@@ -79,15 +67,12 @@ empresas.push(empresa1, empresa2, empresa3, empresa4, empresa5);
 function CadastrarEmpresa(e) {
     e.preventDefault()
     let skills = [];
-    if (checkPython.checked) skills.push("Python");
-    if (checkJava.checked) skills.push("Java");
-    if (checkJS.checked) skills.push("JavaScript");
-    if (checkTS.checked) skills.push("TypeScript");
-    if (checkGroovy.checked) skills.push("Groovy");
-    if (checkGrails.checked) skills.push("Grails");
-    if (checkAngular.checked) skills.push("Angular");
-    if (checkPost.checked) skills.push("PostgreSQL");
-
+    let checkboxes = document.querySelectorAll('.form-check-input')
+    for (let checkbox of checkboxes) {
+        if (checkbox.checked) {
+            skills.push(checkbox.value)
+        }
+    }
 
     const empresa = new PessoaJuridica(
         nome.value,
@@ -102,6 +87,7 @@ function CadastrarEmpresa(e) {
 
     empresas.push(empresa)
     document.getElementById('modal-form').reset()
+    closeModal()
     console.log(empresas)
 
 }
@@ -122,6 +108,7 @@ function listarCandidatos() {
 
 }
 
+//Gráfico
 function montarArray(){
     let qntdSkills = []
 
@@ -176,9 +163,8 @@ function montarArray(){
     return qntdSkills
 }
 
-//Gráfico
 function gerarGrafico() {
-    let ctx = document.querySelector('#myChart');
+    let ctx = <HTMLSelectElement>document.querySelector('#myChart');
     let qntdSkills = montarArray()
 
 
@@ -229,4 +215,4 @@ function gerarGrafico() {
 //Eventos
 <HTMLSelectElement> document.getElementById('gerar-grafico')?.addEventListener('click',gerarGrafico)
  <HTMLSelectElement> document.getElementById('listar-candidatos')?.addEventListener('click',listarCandidatos)
-< HTMLSelectElement > document.getElementById('modal-form')?.addEventListener('submit', CadastrarEmpresa)
+<HTMLSelectElement > document.getElementById('modal-form')?.addEventListener('submit', CadastrarEmpresa)
