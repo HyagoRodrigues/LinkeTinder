@@ -28,6 +28,7 @@
     max-height: 400px;
 }
 
-.input-mensagem-erro {
+.error{
+    color: red;
     display: none;
 }

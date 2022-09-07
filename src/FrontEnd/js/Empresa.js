@@ -1,4 +1,4 @@
-var _a, _b, _c;
+var _a, _b, _c, _d, _e;
 import { PessoaJuridica } from "./Classes/PessoaJuridica.js";
 import { candidatos, closeModal } from "./Candidato.js";
 export const empresas = new Array();
@@ -9,14 +9,95 @@ let estado = document.querySelector('#EstadoInput');
 let cep = document.querySelector('#CepInput');
 let pais = document.querySelector('#Paisinput');
 let desc = document.querySelector('#DescInput');
-const empresa1 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
-const empresa2 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
-const empresa3 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
-const empresa4 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
-const empresa5 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de Busca", ["Java", "Groovy", "Angular"]);
+const empresa1 = new PessoaJuridica("Google", "g@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Multinacional que oferece serviços online e softwares para download.", ["Java", "Groovy", "Angular"]);
+const empresa2 = new PessoaJuridica("Amazon", "a@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Multinacional de tecnologia norte-americana com sede em Seattle", ["Java", "Groovy", "Angular", "TypeScript"]);
+const empresa3 = new PessoaJuridica("Apple", "aa@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Multinacional norte-americana de produtos eletrônicos de consumo", ["Java", "Groovy", "Angular", "PostgreSQL", "Grails"]);
+const empresa4 = new PessoaJuridica("Microsoft", "m@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa transnacional dos Estados Unidos com sede em Redmond", ["JavaScript", "TypeScript", "Angular"]);
+const empresa5 = new PessoaJuridica("Dell", "dell@email.com", "23.982.275/0001-73", "Estados Unidos", "CA", "0021548-548", "Empresa de hardware de computador, com foco no desenvolvimento de PCs", ["Java", "Groovy", "Angular", "PostgreSQL", "JavaScript"]);
 empresas.push(empresa1, empresa2, empresa3, empresa4, empresa5);
-function CadastrarEmpresa(e) {
-    e.preventDefault();
+//Máscaras
+function maskCNPJ() {
+    let cnpj = document.querySelector('#CnpjInput');
+    if (cnpj.value.length == 2 || cnpj.value.length == 6) {
+        cnpj.value += ".";
+    }
+    else if (cnpj.value.length == 10) {
+        cnpj.value += "/";
+    }
+    else if (cnpj.value.length == 15) {
+        cnpj.value += "-";
+    }
+}
+function maskCep() {
+    let cep = document.querySelector('#CepInput');
+    if (cep.value.length == 5) {
+        cep.value += "-";
+    }
+}
+//validação
+function validaCadastro() {
+    const checkboxes = document.querySelectorAll('.form-check-input');
+    const checks = Array.from(checkboxes);
+    let valido = false;
+    let inputs = [
+        {
+            nome: document.querySelector('#NomeInput'),
+            validado: (/(?=^.{2,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$/).test(nome.value),
+            erro: document.querySelector('#erroNome'),
+        },
+        {
+            email: document.querySelector('#EmailInput'),
+            validado: (/(\S+@\w+\.\w{2,6}(\.\w{2})?)/g).test(email.value),
+            erro: document.querySelector('#erroEmail'),
+        },
+        {
+            cpf: document.querySelector('#CnpjInput'),
+            validado: (/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/).test(cnpj.value),
+            erro: document.querySelector('#erroCnpj'),
+        },
+        {
+            estado: document.querySelector('#EstadoInput'),
+            validado: (/(?:^|\s)(?!da|de|do)\S/g).test(estado.value),
+            erro: document.querySelector('#erroEstado'),
+        },
+        {
+            cep: document.querySelector('#CepInput'),
+            validado: (/^\d{2}\.?\d{3}\-\d{3}/).test(cep.value),
+            erro: document.querySelector('#erroCep'),
+        },
+        {
+            pais: document.querySelector('#Paisinput'),
+            validado: (/(?:^|\s)(?!da|de|do)\S/g).test(pais.value),
+            erro: document.querySelector('#erroPais'),
+        },
+        {
+            desc: document.querySelector('#DescInput'),
+            validado: (/\w{1,15}/g).test(desc.value),
+            erro: document.querySelector('#erroDesc'),
+        },
+        {
+            checks,
+            validado: checks.some(i => i.checked === true),
+            erro: document.querySelector('#erroSkill')
+        }
+    ];
+    inputs.map(i => {
+        if (!i.validado) {
+            i.erro.style.display = "block";
+            valido = false;
+        }
+        else {
+            i.erro.style.display = "none";
+            valido = true;
+        }
+    });
+    let retorno = inputs.every((valido) => valido.validado === true);
+    if (retorno) {
+        return valido;
+    }
+}
+//Cadastro de Empresa
+function CadastrarEmpresa() {
     let skills = [];
     let checkboxes = document.querySelectorAll('.form-check-input');
     for (let checkbox of checkboxes) {
@@ -30,18 +111,29 @@ function CadastrarEmpresa(e) {
     closeModal();
     console.log(empresas);
 }
+function salvaCadastro(e) {
+    e.preventDefault();
+    if (validaCadastro()) {
+        CadastrarEmpresa();
+    }
+}
+//Listagem
+let contador = 0;
 function listarCandidatos() {
-    candidatos.map(cand => {
-        const nRow = document.createElement('tr');
-        nRow.innerHTML = `
+    if (contador == 0) {
+        candidatos.map(cand => {
+            const nRow = document.createElement('tr');
+            nRow.innerHTML = `
             <td>${cand.descricao}</td>
             <td>${cand.skills}</td>
             <td>
                 <button class="btn btn-outline-success"> Curtir </button>
             </td>
         `;
-        document.querySelector('#tbody').appendChild(nRow);
-    });
+            document.querySelector('#tbody').appendChild(nRow);
+        });
+        contador++;
+    }
 }
 //Gráfico
 function montarArray() {
@@ -130,7 +222,9 @@ function gerarGrafico() {
         }
     });
 }
-//Eventos
-((_a = document.getElementById('gerar-grafico')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', gerarGrafico))
-    < HTMLSelectElement > ((_b = document.getElementById('listar-candidatos')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', listarCandidatos))
-    < HTMLSelectElement > ((_c = document.getElementById('modal-form')) === null || _c === void 0 ? void 0 : _c.addEventListener('submit', CadastrarEmpresa));
+// Eventos
+(_a = document.getElementById('CepInput')) === null || _a === void 0 ? void 0 : _a.addEventListener('keyup', maskCep);
+(_b = document.getElementById('CnpjInput')) === null || _b === void 0 ? void 0 : _b.addEventListener('keyup', maskCNPJ);
+(_c = document.getElementById('gerar-grafico')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', gerarGrafico);
+(_d = document.getElementById('listar-candidatos')) === null || _d === void 0 ? void 0 : _d.addEventListener('click', listarCandidatos);
+(_e = document.getElementById('modal-form')) === null || _e === void 0 ? void 0 : _e.addEventListener('submit', salvaCadastro);

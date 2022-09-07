@@ -43,28 +43,39 @@
                 <div class="modal-header ">
                     <h5 class="modal-title" id="exampleModalLabel">Cadastro de Candidato</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </div>
                 <form class="modal-body" id="modal-form">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="NomeInputC" placeholder="Nome" data-tipo="nome" required >
+                        <input type="text" class="form-control" id="NomeInputC" minlength="3" placeholder="Nome"  required >
                         <label for="NomeInputC">Nome</label>
-                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                        <span id="erro-nome" class="error">Digite o Nome corretamente. Ex: José</span>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="EmailInputC" placeholder="E-mail" required>
                         <label for="EmailInputC">E-mail</label>
+                        <span id="erro-email" class="error">Digite o E-mail corretamente. Ex: email@email.com</span>
                     </div>
                     <div class="row g-2">
                         <div class="col-md ">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="LinkInputC" placeholder="Link do LinkedIn" required>
                                 <label for="LinkInputC">LinkedIn</label>
+                                <span id="erro-linkedin" class="error">Por favor digite uma conta Linkedin válida.</span>
                             </div>
                         </div>
                         <div class="col-sm">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="TelInputC" placeholder="(XX) XXXX-XXXX " required>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        id="TelInputC"
+                                        placeholder="Telefone"
+                                        maxlength="14"
+                                        required
+                                >
                                 <label for="TelInputC">Telefone</label>
+                                <span id="erro-telefone" class="error">Ex:(61) 3333-3333</span>
                             </div>
                         </div>
                     </div>
@@ -73,6 +84,7 @@
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control" id="IdadeInputC" placeholder="Idade" required>
                                 <label for="IdadeInputC">Idade</label>
+                                <span id="erro-idade" class="error">Precisa ser maior de idade</span>
                             </div>
                         </div>
                         <div class="col-sm">
@@ -85,6 +97,7 @@
                                        required
                                 >
                                 <label for="CpfInputC">CPF</label>
+                                <span id="erro-cpf" class="error">Ex: 321.456.987-54</span>
                             </div>
                         </div>
                     </div>
@@ -93,18 +106,28 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="EstadoInputC" placeholder="Estado" required>
                                 <label for="EstadoInputC">Estado</label>
+                                <span id="erro-estado" class="error">Digite o Estado completo. Ex: Goiás</span>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="CepInputC" placeholder="Cep" required>
+                                <input
+                                        type="text"
+                                        class="form-control"
+                                        id="CepInputC"
+                                        placeholder="Cep"
+                                        maxlength="9"
+                                        required
+                                >
                                 <label for="CepInputC">CEP</label>
+                                <span id="erro-cep" class="error">Ex: 78980-025</span>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="PaisinputC" placeholder="Pais" required>
                                 <label for="PaisinputC">Pais</label>
+                                <span id="erro-pais" class="error">Digite o País corretamente</span>
                             </div>
                         </div>
                     </div>
@@ -112,11 +135,14 @@
                     <div class="form-floating mb-3">
                         <textarea type="text" class="form-control" id="DescInputC" placeholder="Descrição" required></textarea>
                         <label for="DescInputC">Descrição</label>
+                        <span id="erro-desc" class="error">Digite uma descrição.</span>
                     </div>
 
                     <label class="form-check-label mb-3">
                         Competências:
                     </label>
+                    <br>
+                    <span id="erro-skill" class="error">Escolha ao menos uma Competência</span>
                     <div class="row g-3 md-3">
                         <div class="col-md">
                             <div class="form-check">

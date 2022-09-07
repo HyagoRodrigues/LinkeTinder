@@ -55,32 +55,48 @@
           <div class="form-floating mb-3">
             <input type="text" class="form-control" id="NomeInput" placeholder="Nome" required>
             <label for="NomeInput">Nome</label>
+            <span id="erroNome" class="error">Digite o Nome corretamente</span>
+
           </div>
           <div class="form-floating mb-3">
             <input type="email" class="form-control" id="EmailInput" placeholder="E-mail" required>
             <label for="EmailInput">E-mail</label>
+            <span id="erroEmail" class="error">Digite o E-mail corretamente. Ex: email@email.com</span>
+
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="CnpjInput" placeholder="CNPJ" required>
+            <input
+                    type="text"
+                    class="form-control"
+                    id="CnpjInput"
+                    placeholder="CNPJ"
+                    maxlength="18"
+                    required
+            >
             <label for="CnpjInput">CNPJ</label>
+            <span id="erroCnpj" class="error">Digite o CNPJ corretamente.Ex: 09.268.560/0001-04</span>
+
           </div>
           <div class="row g-3">
             <div class="col-md mb-3">
               <div class="form-floating">
                 <input type="text" class="form-control" id="EstadoInput" placeholder="Estado" required>
                 <label for="EstadoInput">Estado</label>
+                <span id="erroEstado" class="error">Digite o Estado completo. Ex: Goiás</span>
               </div>
             </div>
             <div class="col-md">
               <div class="form-floating">
-                <input type="text" class="form-control" id="CepInput" placeholder="Cep" required>
+                <input type="text" class="form-control" id="CepInput" maxlength="9" placeholder="Cep" required>
                 <label for="CepInput">CEP</label>
+                <span id="erroCep" class="error">Digite o CEP corretamente. Ex: 78980-025</span>
               </div>
             </div>
             <div class="col-md">
               <div class="form-floating">
                 <input type="text" class="form-control" id="Paisinput" placeholder="Pais" required>
                 <label for="Paisinput">Pais</label>
+                <span id="erroPais" class="error">Digite o País corretamente</span>
               </div>
             </div>
           </div>
@@ -88,11 +104,13 @@
           <div class="form-floating mb-3">
             <textarea type="text" class="form-control" id="DescInput" placeholder="Descrição" required></textarea>
             <label for="DescInput">Descrição</label>
+            <span id="erroDesc" class="error">Digite uma descrição.</span>
           </div>
 
           <label class="form-check-label mb-3">
             Competências Necessárias:
           </label>
+          <span id="erroSkill" class="error">Escolha ao menos uma Competência</span>
           <div class="row g-3 md-3">
             <div class="col-md">
               <div class="form-check">
