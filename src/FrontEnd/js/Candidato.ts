@@ -36,7 +36,7 @@ const canditado2 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedora Pleno",
-    ["Java", "Groovy", "PostgreSQL", "Python"]
+    ["Java", "Groovy", "PostgreSQL", "Python", "Angular"]
 );
 const canditado3 = new PessoaFisica(
     "Gabriel Fernandes",
@@ -48,7 +48,7 @@ const canditado3 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedor Junior",
-    ["JavaScript", "Typescript", "Angular"]
+    ["JavaScript", "Typescript", "Angular", "Grails",]
 );
 const canditado4 = new PessoaFisica(
     "Josefina",
@@ -72,7 +72,7 @@ const canditado5 = new PessoaFisica(
     "GO",
     "72590-000",
     "Desenvolvedora Pleno",
-    ["Java", "Groovy", "Angular", "PostgreSQL", "JavaScript"]
+    ["Java", "Angular", "PostgreSQL", "JavaScript"]
 );
 
 candidatos.push(canditado1, canditado2, canditado3, canditado4, canditado5);

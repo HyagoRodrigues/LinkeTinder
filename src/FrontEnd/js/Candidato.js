@@ -13,10 +13,10 @@ let cep = document.querySelector('#CepInputC');
 let pais = document.querySelector('#PaisinputC');
 let desc = document.querySelector('#DescInputC');
 const canditado1 = new PessoaFisica("Eduardo", "e@email.com", "(61) 9888-5555", "https://www.linkedin.com/in/eduardo-457", "816.171.166-61", 22, "Brasil", "DF", "72590-000", "Desenvolvedor Junior", ["Java", "Groovy", "Angular", "TypeScript"]);
-const canditado2 = new PessoaFisica("Maria Alice", "maria.alice@email.com", "(62) 9888-5555", "https://www.linkedin.com/in/maria-897", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "PostgreSQL", "Python"]);
-const canditado3 = new PessoaFisica("Gabriel Fernandes", "maria.alice@email.com", "(64) 9888-8755", "https://www.linkedin.com/in/gh-457", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedor Junior", ["JavaScript", "Typescript", "Angular"]);
+const canditado2 = new PessoaFisica("Maria Alice", "maria.alice@email.com", "(62) 9888-5555", "https://www.linkedin.com/in/maria-897", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "PostgreSQL", "Python", "Angular"]);
+const canditado3 = new PessoaFisica("Gabriel Fernandes", "maria.alice@email.com", "(64) 9888-8755", "https://www.linkedin.com/in/gh-457", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedor Junior", ["JavaScript", "Typescript", "Angular", "Grails",]);
 const canditado4 = new PessoaFisica("Josefina", "j@email.com", "(63) 9888-5555", "https://www.linkedin.com/in/josefina-457", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Sênior", ["Java", "Groovy", "Angular", "PostgreSQL", "Grails",]);
-const canditado5 = new PessoaFisica("Gustavo", "g@email.com", "(61) 9888-5555", "https://www.linkedin.com/in/gus-457", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Groovy", "Angular", "PostgreSQL", "JavaScript"]);
+const canditado5 = new PessoaFisica("Gustavo", "g@email.com", "(61) 9888-5555", "https://www.linkedin.com/in/gus-457", "361.204.631-43", 22, "Brasil", "GO", "72590-000", "Desenvolvedora Pleno", ["Java", "Angular", "PostgreSQL", "JavaScript"]);
 candidatos.push(canditado1, canditado2, canditado3, canditado4, canditado5);
 //fechar modal
 export function closeModal() {

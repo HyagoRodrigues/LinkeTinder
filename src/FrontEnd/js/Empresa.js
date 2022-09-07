@@ -184,7 +184,7 @@ function gerarGrafico() {
     const skillsLabel = qntdSkills.map(i => i.skill);
     const skillsQnt = qntdSkills.map(i => i.qntd);
     const myChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'bar',
         data: {
             labels: skillsLabel,
             datasets: [{
