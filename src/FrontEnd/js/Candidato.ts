@@ -123,7 +123,7 @@ function validaCadastro() {
     let inputs = [
         {
             nome: <HTMLSelectElement>document.querySelector('#NomeInputC'),
-            validado: (/(?=^.{2,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$/).test(nome.value),
+            validado:  (/(?=^.{2,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$/).test(nome.value),
             erro: <HTMLSelectElement>document.querySelector('#erro-nome'),
         },
         {
