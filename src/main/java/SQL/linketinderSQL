@@ -150,3 +150,8 @@
 -- SELECT * FROM vagas_competencias;
 
 
+
+-- INSERT INTO candidato_competencias(id_candidato, id_competencias) VALUES (1,2);
+-- SELECT c.nome, com.nome
+-- FROM candidato_competencias AS ccom, candidatos AS c, competencias AS com
+-- WHERE ccom.id_candidato = c.id AND ccom.id_competencias = com.id AND c.id = 1
