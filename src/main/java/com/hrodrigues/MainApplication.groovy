@@ -29,39 +29,26 @@ while(!exit){
             "\n 3 - Listar Vagas" +
             "\n 4 - Inserir novo Candidato " +
             "\n 5 - Inserir nova Empresa " +
-            "\n 6 - Inserir uma Vaga" +
-            "\n 7 - Inserir uma Competência" +
-            "\n 8 - Sair"
-
+            "\n 6 - Sair"
     )
     int opcao = System.in.newReader().readLine().toInteger()
     switch(opcao){
         case 1:
             BD.listar_empresas()
-//            Listar.PJ(listaPessoaJuridica)
             break
         case 2:
             BD.listar_candidatos()
-//            Listar.PF(listaPessoaFisica)
             break
         case 3:
             BD.listar_vagas()
-//            listaPessoaJuridica << Cadastrar.PessoaJuridica()
             break
         case 4:
             BD.inserir_candidato()
-//            listaPessoaFisica << Cadastrar.PessoaFisica()
             break
         case 5:
             BD.inserir_empresa()
             break
         case 6:
-            BD.inserir_vaga()
-            break
-        case 7:
-            println("Inserir uma Competência")
-            break
-        case 8:
             exit = true
             break
         default :

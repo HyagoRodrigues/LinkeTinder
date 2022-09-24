@@ -3,8 +3,8 @@
 --   	nome VARCHAR(50) NOT NULL,
 --   	sobrenome VARCHAR(50) NOT NULL,
 --   	data_nascimento DATE NOT NULL,
---  	email VARCHAR(50) NOT NULL,
---   	cpf VARCHAR(14) NOT NULL,
+--  	email VARCHAR(50) UNIQUE NOT NULL,
+--   	cpf VARCHAR(14) UNIQUE NOT NULL,
 --   	pais VARCHAR(50) NOT NULL,
 --   	cep VARCHAR(9) 	NOT NULL,
 --   	descricao TEXT 	NOT NULL,
@@ -152,6 +152,8 @@
 
 
 -- INSERT INTO candidato_competencias(id_candidato, id_competencias) VALUES (1,2);
--- SELECT c.nome, com.nome
--- FROM candidato_competencias AS ccom, candidatos AS c, competencias AS com
--- WHERE ccom.id_candidato = c.id AND ccom.id_competencias = com.id AND c.id = 1
+-- SELECT com.nome
+-- FROM candidato_competencias ccom
+-- JOIN candidatos c ON c.id = ccom.id_candidato
+-- JOIN competencias com ON com.id = ccom.id_competencias
+-- WHERE c.id = 1
