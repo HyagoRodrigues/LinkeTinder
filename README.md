@@ -10,7 +10,7 @@ Projeto que tem o objetivo de implementar um sistema baseado no core do Linkedin
 - `Listagem`: Listagem de Candidatos e Empresas
  
  #### 📁 Acesso ao Back-end <br>
-Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/HyagoRodrigues/LinkeTinder/tree/main/src/com/hrodrigues).  
+Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/HyagoRodrigues/LinkeTinder/tree/main/src/main/java/com/hrodrigues).  
 
 
 # Front-end 
@@ -22,9 +22,9 @@ Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/Hya
 - `Gráfico`: Plotagem de Gráfico de barras de  usuários por competência.
      
  #### 📁 Acesso ao Front-end <br>
-Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/HyagoRodrigues/LinkeTinder/tree/main/src/FrontEnd).     
+Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/HyagoRodrigues/LinkeTinder/tree/main/src/main/java/FrontEnd).     
 
 ## Testes Unitários 
  ### 📁 Acesso ao Arquivo de Testes
-Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/HyagoRodrigues/LinkeTinder/tree/main/src/com/hrodrigues/Testes).  
+Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/HyagoRodrigues/LinkeTinder/tree/main/src/main/java/com/hrodrigues/Testes).  
 
